@@ -1,0 +1,18 @@
+{
+  "connections": {
+    "iot-cloud": {
+      "host": "192.168.30.91",
+      "port": 3306,
+      "username": "root",
+      "password": "123456",
+      "database": "iot-cloud"
+    },
+    "bc-cloud": {
+      "host": "192.168.30.244",
+      "port": 3306,
+      "username": "root",
+      "password": "123456",
+      "database": "bc-cloud"
+    }
+  }
+}

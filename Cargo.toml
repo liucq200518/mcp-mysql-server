@@ -1,0 +1,23 @@
+[package]
+name = "mcp-mysql-server"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.100"
+clap = { version = "4.5.54", features = ["derive"] }
+mcp-server = "0.1.0"
+mcp-spec = "0.1.0"
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.149"
+sqlx = { version = "0.8.6", features = ["runtime-tokio-native-tls", "mysql"] }
+tokio = { version = "1.49.0", features = ["full"] }
+toml = "0.9.11"
+tracing = "0.1.44"
+tracing-subscriber = "0.3.22"
+salvo = { version = "0.74", features = ["cors", "serve-static", "sse"] }
+tokio-stream = "0.1"
+futures = "0.3"
+bytes = "1.5"
+async-stream = "0.3"
+notify = "6.1"
