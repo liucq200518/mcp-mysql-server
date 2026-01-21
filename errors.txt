@@ -1,0 +1,29 @@
+warning: `C:\Users\Administrator\.cargo\config` is deprecated in favor of `config.toml`
+note: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+    Checking mcp-mysql-server v0.1.0 (D:\projects\RustroverProjects\llm\mysql-mcp-server)
+error[E0277]: can't compare `&std::string::String` with `std::string::String`
+   --> src\db.rs:615:35
+    |
+615 |                         if s_type != *t_type || s_null != *t_null {
+    |                                   ^^ no implementation for `&std::string::String == std::string::String`
+    |
+    = help: the trait `PartialEq<std::string::String>` is not implemented for `&std::string::String`
+help: consider dereferencing here
+    |
+615 |                         if *s_type != *t_type || s_null != *t_null {
+    |                            +
+
+error[E0277]: can't compare `&std::string::String` with `std::string::String`
+   --> src\db.rs:615:56
+    |
+615 |                         if s_type != *t_type || s_null != *t_null {
+    |                                                        ^^ no implementation for `&std::string::String == std::string::String`
+    |
+    = help: the trait `PartialEq<std::string::String>` is not implemented for `&std::string::String`
+help: consider dereferencing here
+    |
+615 |                         if s_type != *t_type || *s_null != *t_null {
+    |                                                 +
+
+For more information about this error, try `rustc --explain E0277`.
+error: could not compile `mcp-mysql-server` (bin "mcp-mysql-server") due to 2 previous errors

@@ -1,0 +1,25 @@
+warning: `C:\Users\Administrator\.cargo\config` is deprecated in favor of `config.toml`
+note: if you need to support cargo 1.38 or earlier, you can symlink `config` to `config.toml`
+    Checking mcp-mysql-server v0.1.0 (D:\projects\RustroverProjects\llm\mysql-mcp-server)
+error[E0599]: no method named `dry_run_sql` found for struct `Arc<DbManager>` in the current scope
+   --> src\mcp.rs:474:26
+    |
+473 |                       let result = db
+    |  __________________________________-
+474 | |                         .dry_run_sql(conn, sql)
+    | |                         -^^^^^^^^^^^ method not found in `Arc<DbManager>`
+    | |_________________________|
+    |
+
+error[E0599]: no method named `explain_query` found for struct `Arc<DbManager>` in the current scope
+   --> src\mcp.rs:491:26
+    |
+490 |                       let result = db
+    |  __________________________________-
+491 | |                         .explain_query(conn, sql)
+    | |                         -^^^^^^^^^^^^^ method not found in `Arc<DbManager>`
+    | |_________________________|
+    |
+
+For more information about this error, try `rustc --explain E0599`.
+error: could not compile `mcp-mysql-server` (bin "mcp-mysql-server") due to 2 previous errors
