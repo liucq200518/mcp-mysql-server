@@ -2,7 +2,7 @@
 
 本项目是一个基于 Rust 开发的 MCP Server，用于连接 MySQL 数据库并为 MCP Client (如 Claude Desktop, IDE AI 插件等) 提供数据库查询与管理能力。
 
-## ✨ 功能特性
+## 功能特性
 
 - **多数据源支持**：通过配置文件同时管理多个 MySQL 连接。
 - **配置热重载 (Hot Reload)**：修改并保存 `config.json` 后，服务端会自动更新连接池，**无需重启**。
@@ -22,7 +22,7 @@
     - `scan_pii_columns`: **隐私合规扫描**。识别潜在的敏感数据列。
 
 
-## �️ MCP 工具能力全景图
+## MCP 工具能力全景图
 
 | 类别 | 工具名称 (Tool Name) | 功能描述 | AI 最佳实践流程 / 使用建议 |
 | :--- | :--- | :--- | :--- |
@@ -46,7 +46,7 @@
 
 ---
 
-## �🚀 快速开始
+## 快速开始
 
 ### 1. 编译
 确保已安装 Rust 环境 (cargo)。
@@ -126,7 +126,7 @@ mcp-mysql-server.exe --config config.json --port 3000
 > [!NOTE]
 > 目前 Claude Desktop 官方主要支持 stdio 模式。SSE 模式通常用于 Web 应用集成或支持网络传输的 MCP 代理软件。
 
-## 🧰 MCP 增强工具详解
+## MCP 增强工具详解
 
 ### 1. 架构探索 (Exploration)
 - **`get_table_preview`**: 采样数据。
@@ -153,7 +153,7 @@ mcp-mysql-server.exe --config config.json --port 3000
 
 ---
 
-## 💡 场景化使用示例 (Prompt Examples)
+## 场景化使用示例 (Prompt Examples)
 
 ### 场景 A：安全的线上数据修复
 > **用户指令**: "帮我把 `order_db` 中 `status` 为 1 但 `payment_time` 为空的订单状态改为 0。"
@@ -200,15 +200,15 @@ mcp-mysql-server.exe --config config.json --port 3000
 
 ---
 
-### 💡 配置文件自动重载
+### 配置文件自动重载
 
 服务端启动后会持续观察配置文件。当您在 `config.json` 中添加、修改或删除数据库连接并保存后，控制台会显示 `Config file changed, reloading...`，变更将立即生效，Client 端无需重启。
 
-## ⚠️ 安全说明
+## 安全说明
 
 - **execute_ddl** 是危险操作，Client 端和模型应当谨慎使用。
 - 建议配置数据库账号时遵循最小权限原则（如只分配 SELECT 权限给用于查询的连接）。
 
-## 🛠️ 开发
+## 开发
 - 依赖库：`tokio`, `sqlx`, `mcp-server`, `clap` 等。
 - 运行测试：`cargo test`
