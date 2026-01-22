@@ -200,7 +200,7 @@ mcp-mysql-server.exe --config config.json --port 3000
 
 ---
 
-### 配置文件自动重载
+## 配置文件自动重载
 
 服务端启动后会持续观察配置文件。当您在 `config.json` 中添加、修改或删除数据库连接并保存后，控制台会显示 `Config file changed, reloading...`，变更将立即生效，Client 端无需重启。
 
